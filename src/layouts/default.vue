@@ -1,11 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="app">
-        <div class="app__slot">
-            <slot />
-        </div>
+  <div class="app">
+    <div class="app__slot">
+      <slot />
     </div>
+  </div>
 </template>
 
 <style lang="postcss">

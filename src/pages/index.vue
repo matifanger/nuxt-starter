@@ -1,94 +1,96 @@
 <script lang="ts" setup>
 useHead({
-    title: 'Basic Version - Nuxt 3 Template',
-    // titleTemplate: (title) => `${title} | MySite`,
-    meta: [{ name: 'description', content: 'Basic Version - Nuxt 3 Template' }],
+  title: 'Basic Version - Nuxt 3 Template',
+  // titleTemplate: (title) => `${title} | MySite`,
+  meta: [{ name: 'description', content: 'Basic Version - Nuxt 3 Template' }],
 })
 
 const whatWeHave = [
-    {
-        title: 'TailwindCSS',
-        image: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/tailwindcss_logo_icon_167923.png',
-        description: 'A utility-first CSS framework.',
-        url: 'https://tailwindcss.com/',
-    },
-    {
-        title: 'Headless UI',
-        image: '/assets/headlessui-icon.svg',
-        description: 'Completely unstyled, fully accessible UI components.',
-        url: 'https://headlessui.dev/',
-    },
-    {
-        title: 'Pinia',
-        image: 'https://pinia.esm.dev/logo.svg',
-        description: 'A store for Vue applications.',
-        url: 'https://pinia.esm.dev/',
-    },
-    {
-        title: 'VueUse',
-        image: 'https://vueuse.org/favicon.svg',
-        description: 'A collection of essential Composition API functions.',
-        url: 'https://vueuse.org/',
-    },
-    {
-        title: 'Nuxt Image',
-        image: 'https://i.imgur.com/C9lDB1x.png',
-        description: 'Plug-and-play image optimization for Nuxt apps.',
-        url: 'https://v1.image.nuxtjs.org/get-started/',
-    },
-    {
-        title: 'Color Mode',
-        image: 'https://i.imgur.com/3lExL6H.png',
-        description: 'Dark and Light mode with auto detection made easy.',
-        url: 'https://color-mode.nuxtjs.org/',
-    },
-    {
-        title: 'Unlighthouse',
-        image: 'https://d33wubrfki0l68.cloudfront.net/64ca835bc00d433f990610a6e616b65bb6f70118/68801/logo-light.svg',
-        description: 'Like Lighthouse, but it scans every single page.',
-        url: 'https://unlighthouse.dev/',
-    },
-    {
-        title: 'Uno Icons',
-        image: 'https://raw.githubusercontent.com/unocss/unocss/main/playground/public/icon-gray.svg',
-        description: 'Use any icons with Pure CSS for UnoCSS.',
-        url: 'https://github.com/unocss/unocss/tree/main/packages/preset-icons/',
-    },
+  {
+    title: 'TailwindCSS',
+    image: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/tailwindcss_logo_icon_167923.png',
+    description: 'A utility-first CSS framework.',
+    url: 'https://tailwindcss.com/',
+  },
+  {
+    title: 'Headless UI',
+    image: '/assets/headlessui-icon.svg',
+    description: 'Completely unstyled, fully accessible UI components.',
+    url: 'https://headlessui.dev/',
+  },
+  {
+    title: 'Pinia',
+    image: 'https://pinia.esm.dev/logo.svg',
+    description: 'A store for Vue applications.',
+    url: 'https://pinia.esm.dev/',
+  },
+  {
+    title: 'VueUse',
+    image: 'https://vueuse.org/favicon.svg',
+    description: 'A collection of essential Composition API functions.',
+    url: 'https://vueuse.org/',
+  },
+  {
+    title: 'Nuxt Image',
+    image: 'https://i.imgur.com/C9lDB1x.png',
+    description: 'Plug-and-play image optimization for Nuxt apps.',
+    url: 'https://v1.image.nuxtjs.org/get-started/',
+  },
+  {
+    title: 'Color Mode',
+    image: 'https://i.imgur.com/3lExL6H.png',
+    description: 'Dark and Light mode with auto detection made easy.',
+    url: 'https://color-mode.nuxtjs.org/',
+  },
+  {
+    title: 'Unlighthouse',
+    image: 'https://d33wubrfki0l68.cloudfront.net/64ca835bc00d433f990610a6e616b65bb6f70118/68801/logo-light.svg',
+    description: 'Like Lighthouse, but it scans every single page.',
+    url: 'https://unlighthouse.dev/',
+  },
+  {
+    title: 'Uno Icons',
+    image: 'https://raw.githubusercontent.com/unocss/unocss/main/playground/public/icon-gray.svg',
+    description: 'Use any icons with Pure CSS for UnoCSS.',
+    url: 'https://github.com/unocss/unocss/tree/main/packages/preset-icons/',
+  },
 ]
 </script>
 
 <template>
-    <div class="mainpage">
-        <div class="mainpage__wrapper">
-            <h1>
-                Nuxt 3 Template - Basic Version
-                <div class="i-mdi:beta text-orange-400" />
-            </h1>
-            <h2>What's included</h2>
-            <div class="mainpage__items">
-                <NuxtLink
-                    :to="item.url"
-                    v-for="(item, key) in whatWeHave"
-                    :key="key"
-                    class="mainpage__items-card"
-                    target="_blank"
-                >
-                    <div class="mainpage__items-card-body">
-                        <img :src="item.image" alt="" />
-                        <h3 class="title">{{ item.title }}</h3>
-                        <p class="description">
-                            {{ item.description }}
-                        </p>
-                    </div>
-                </NuxtLink>
-            </div>
-            <footer class="mainpage__creator">
-                <p>
-                    Made with ❤️ by <a href="https://twitter.com/matifanger" target="_blank">@matifanger</a>
-                </p>
-            </footer>
-        </div>
+  <div class="mainpage">
+    <div class="mainpage__wrapper">
+      <h1>
+        Nuxt 3 Template - Basic Version
+        <div class="i-mdi:beta text-orange-400" />
+      </h1>
+      <h2>What's included</h2>
+      <div class="mainpage__items">
+        <NuxtLink
+          v-for="(item, key) in whatWeHave"
+          :key="key"
+          :to="item.url"
+          class="mainpage__items-card"
+          target="_blank"
+        >
+          <div class="mainpage__items-card-body">
+            <img :src="item.image" alt="">
+            <h3 class="title">
+              {{ item.title }}
+            </h3>
+            <p class="description">
+              {{ item.description }}
+            </p>
+          </div>
+        </NuxtLink>
+      </div>
+      <footer class="mainpage__creator">
+        <p>
+          Made with ❤️ by <a href="https://twitter.com/matifanger" target="_blank">@matifanger</a>
+        </p>
+      </footer>
     </div>
+  </div>
 </template>
 
 <style lang="postcss" scoped>
